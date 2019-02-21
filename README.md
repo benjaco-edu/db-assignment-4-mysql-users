@@ -99,7 +99,7 @@ INSERT INTO classicmodels.employees(lastName,firstName,extension,email,officeCod
  \
 -- Product \
 INSERT INTO classicmodels.products( productName, productLine, productScale, productVendor, productDescription,quantityInStock, buyPrice, MRSP )  \
- VALUES (`Toyota Lexus`,` classic car` ,`1:10`,`Unimax Art Galleries`, `speedy`,`500`, `50`,`90`); \
+ VALUES ('Toyota Lexus', 'classic car' ,'1:10','Unimax Art Galleries', 'speedy','500', '50','90'); \
  \
 -- Order \
 INSERT INTO classicmodels.orders (orderNumber, orderDate, requiredDate, shippedDate, status, comments, customerNumber) VALUES (10500, '2013-01-09', '2013-01-18', null, 'On Hold', 'Check on availability.', 128); \
