@@ -112,7 +112,7 @@ INSERT INTO classicmodels.orderdetails (orderNumber, productCode, quantityOrdere
 
 ```
 mysql -u Inventory -ppass1234 -e " \
-INSERT INTO `classicmodels`.`employees`(`lastName`,`firstName`,`extension`,`email`,`officeCode`,`reportsTo,`jobTitle`)VALUES('larsen','bo','x101','hacker@live.dk',1,1002,'hacker'); \
+INSERT INTO classicmodels.employees(lastName,firstName,extension,email,officeCode,reportsTo,jobTitle)VALUES('larsen','bo','x101','hacker@live.dk',1,1002,'hacker'); \
 "
 ```
 
