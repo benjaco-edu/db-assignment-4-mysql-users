@@ -87,6 +87,8 @@ FLUSH PRIVILEGES; \
 "
 ```
 
+__We can see the effect by running__ `mysql -u humanresource -ppass1234 -e "USE classicmodels; SHOW TABLES;"`
+
 ## Exercise 2 - logging
 
 Logging is allready enabled, time to fire of some commands
@@ -192,7 +194,28 @@ _The status of the failing line issnt logged as failed, and cant finde any flag 
 
 ## Exercise 3 - backup and recovery
 
+### Backup data and structure
+_Users are not in the backup in following commands, the can be backedup thouge the internal users table, but it is better to use the create user scripts for this_
 
+`mysqldump -u root -ppass1234 --databases classicmodels > database_blackup_after_execises.sql`
 
+_File is included in the repo_
+
+Tip: File can be moved out of the container with `sudo docker cp my_mysql:/database_blackup_after_execises.sql .` and in with `sudo docker cp database_blackup_after_execises.sql my_mysql:/`
+
+### Restore
+
+**Delete database**
+
+```
+mysql -u root -ppass1234 -e " \
+DROP DATABASE classicmodels; \
+"
+```
+
+**Restore database**
+```
+mysql -u root -ppass1234 < /database_blackup_after_execises.sql
+```
 
 
