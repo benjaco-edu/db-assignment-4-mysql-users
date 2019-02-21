@@ -16,6 +16,7 @@ sudo docker run --rm --name my_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass123
 sudo docker cp mysqlsampledatabase.sql my_mysql:/tmp
 sudo docker exec -it my_mysql bash 
 # Following is inside the hash
+sleep 5 # problems with not beeing ready, next line might have to be retried
 mysql -u root -ppass1234 < /tmp/mysqlsampledatabase.sql
 ```
 
