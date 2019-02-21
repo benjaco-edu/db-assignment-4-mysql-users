@@ -119,7 +119,7 @@ INSERT INTO classicmodels.employees(lastName,firstName,extension,email,officeCod
 ### Show the log
 
 ```
-mysql -u Inventory -ppass1234 -e " \
+mysql -u root -ppass1234 -e " \
 SELECT event_time, user_host, command_type, argument \
 FROM mysql.general_log \
 ORDER BY event_time DESC \
