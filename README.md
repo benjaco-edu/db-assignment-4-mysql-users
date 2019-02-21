@@ -7,7 +7,7 @@ https://github.com/datsoftlyngby/soft2019spring-databases/blob/master/assignment
 
 Follwing will download the data, and create a docker container.
 
-You will be put inside the docker container where you have to execute the all the following commands unless it is marjed otherwise
+You will be put inside the docker container where you have to execute the all the following commands
 
 ```
 wget http://www.mysqltutorial.org/wp-content/uploads/2018/03/mysqlsampledatabase.zip
