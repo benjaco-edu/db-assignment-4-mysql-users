@@ -218,4 +218,8 @@ DROP DATABASE classicmodels; \
 mysql -u root -ppass1234 < /database_blackup_after_execises.sql
 ```
 
+## Cleanup
 
+Exit the shell with `CTRL + d`
+
+Remove the docker container with `sudo docker rm -f my_mysql`
