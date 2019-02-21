@@ -9,17 +9,23 @@ Following will download the data, and create a Docker container.
 
 You will be put inside the docker container where you have to execute  all the following commands
 
+**Start container and install dependencies to fetch the database**
+```
+sudo docker run --rm --name my_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass1234 -d mysql
+sudo docker exec -it my_mysql bash 
+echo "Following is inside the container"
+apt-get update
+apt-get install wget unzip -y
+```
+**Download the data**
 ```
 wget http://www.mysqltutorial.org/wp-content/uploads/2018/03/mysqlsampledatabase.zip
 unzip mysqlsampledatabase.zip
-sudo docker run --rm --name my_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass1234 -d mysql
-sudo docker cp mysqlsampledatabase.sql my_mysql:/tmp
-sudo docker exec -it my_mysql bash 
-# Following is inside the hash
-sleep 25 # problems with not beeing ready, next line might have to be retried
-mysql -u root -ppass1234 < /tmp/mysqlsampledatabase.sql
 ```
-*You might have to run the last line a couple of times, the server is not always that fast to boot up*
+**Import data** __You might have to run this command a couple of times, the server is not always that fast to boot up__
+```
+mysql -u root -ppass1234 < mysqlsampledatabase.sql
+```
 
 ## Enable logging
 
