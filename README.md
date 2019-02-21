@@ -190,7 +190,7 @@ LIMIT 100; \
 
 ```
 
-_The status of the failing line isn't logged as failed, and can't find any flag to turn this on, but we can see it has been ran by a wrong user_
+_The status of the failing line isn't logged as failed, and can't find any flag to turn this on, but we can see it has been ran by the wrong user_
 
 ## Exercise 3 - backup and recovery
 
