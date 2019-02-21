@@ -14,7 +14,7 @@ wget http://www.mysqltutorial.org/wp-content/uploads/2018/03/mysqlsampledatabase
 unzip mysqlsampledatabase.zip
 sudo docker run --rm --name my_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass1234 -d mysql
 sudo docker cp mysqlsampledatabase.sql my_mysql:/tmp
-sudo docker exec my_mysql bash 
+sudo docker exec -it my_mysql bash 
 # Following is inside the hash
 mysql -u root -ppass1234 < /tmp/mysqlsampledatabase.sql
 ```
