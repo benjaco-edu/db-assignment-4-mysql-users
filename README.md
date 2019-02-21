@@ -5,9 +5,9 @@ https://github.com/datsoftlyngby/soft2019spring-databases/blob/master/assignment
 
 ## Get up and running
 
-Follwing will download the data, and create a docker container.
+Following will download the data, and create a Docker container.
 
-You will be put inside the docker container where you have to execute the all the following commands
+You will be put inside the docker container where you have to execute  all the following commands
 
 ```
 wget http://www.mysqltutorial.org/wp-content/uploads/2018/03/mysqlsampledatabase.zip
@@ -19,11 +19,11 @@ sudo docker exec -it my_mysql bash
 sleep 5 # problems with not beeing ready, next line might have to be retried
 mysql -u root -ppass1234 < /tmp/mysqlsampledatabase.sql
 ```
-*You might have to run the last line a couple of times, the server is not always that fast to bootup*
+*You might have to run the last line a couple of times, the server is not always that fast to boot up*
 
 ## Enable logging
 
-The data is now loaded, we need logging for later, lets start the recording
+The data is now loaded, we need logging for later, let's start the recording
 
 ```
 mysql -u root -ppass1234 -e " \
@@ -43,7 +43,7 @@ FLUSH PRIVILEGES; \
 "
 ```
 
-**Bookkeeping** are going to be able to read/write to customers and payments to fix bugs, and they have to be able to change it for customer support if the data dosnt match, they need read access in all of the other tables to join in the customer data for getting a overwiev of the customer, EXCEPT the employee og offices table
+**Bookkeeping** are going to be able to read/write to customers and payments to fix bugs, and they have to be able to change it for customer support if the data doesn't match, they need to read access in all of the other tables to join in the customer data for getting an overview of the customer, EXCEPT the employee of offices table
 ```
 mysql -u root -ppass1234 -e " \
 CREATE USER 'Bookkeeping'@'%' IDENTIFIED BY 'pass1234'; \
@@ -57,7 +57,7 @@ FLUSH PRIVILEGES; \
 "
 ```
 
-**Human ressources** are the bussiness mangers in regards of the data, read/write to employee og offices
+**Human resources** are the business managers in regards to the data, read/write to employee of offices
 ```
 mysql -u root -ppass1234 -e " \
 CREATE USER 'humanresource'@'%' IDENTIFIED BY 'pass1234'; \
@@ -67,7 +67,7 @@ FLUSH PRIVILEGES;   \
 "
 ```
 
-**Sales** talks to the customers, the need to add sales and insert/modify customers for new clients or new info about a client, read/write customers and orders, delete to orders as well if they regeds
+**Sales** talks to the customers, the need to add sales and insert/modify customers for new clients or new info about a client, read/write customers and orders, delete to orders as well if they regards
 ```
 mysql -u root -ppass1234 -e " \
 CREATE USER 'Sales'@'%' IDENTIFIED BY 'pass1234'; \
@@ -91,7 +91,7 @@ __We can see the effect by running__ `mysql -u humanresource -ppass1234 -e "USE 
 
 ## Exercise 2 - logging
 
-Logging is allready enabled, time to fire of some commands
+Logging is already enabled, time to fire off some commands
 
 ```
 mysql -u root -ppass1234 -e " \
@@ -190,12 +190,12 @@ LIMIT 100; \
 
 ```
 
-_The status of the failing line issnt logged as failed, and cant finde any flag to turn this on, but we can see it has been ran by a wrong user_
+_The status of the failing line isn't logged as failed, and can't find any flag to turn this on, but we can see it has been ran by a wrong user_
 
 ## Exercise 3 - backup and recovery
 
 ### Backup data and structure
-_Users are not in the backup in following commands, the can be backedup thouge the internal users table, but it is better to use the create user scripts for this_
+_Users are not in the backup in following commands, the can be backed up through the internal user's table, but it is better to use the create user scripts for this_
 
 `mysqldump -u root -ppass1234 --databases classicmodels > database_blackup_after_execises.sql`
 
