@@ -19,6 +19,7 @@ sudo docker exec -it my_mysql bash
 sleep 5 # problems with not beeing ready, next line might have to be retried
 mysql -u root -ppass1234 < /tmp/mysqlsampledatabase.sql
 ```
+*You might have to run the last line a couple of times, the server is not always that fast to bootup*
 
 ## Enable logging
 
