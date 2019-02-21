@@ -122,6 +122,7 @@ INSERT INTO classicmodels.employees(lastName,firstName,extension,email,officeCod
 mysql -u root -ppass1234 -e " \
 SELECT event_time, user_host, command_type, argument \
 FROM mysql.general_log \
+WHERE argument != 'SHOW GLOBAL STATUS' \
 ORDER BY event_time DESC \
 LIMIT 20; \
 "
