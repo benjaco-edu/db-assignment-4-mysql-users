@@ -124,7 +124,7 @@ SELECT event_time, user_host, command_type, argument \
 FROM mysql.general_log \
 WHERE argument != 'SHOW GLOBAL STATUS' \
 ORDER BY event_time DESC \
-LIMIT 20; \
+LIMIT 100; \
 "
 ```
 #### Result of log
