@@ -73,7 +73,7 @@ FLUSH PRIVILEGES;   \
 "
 ```
 
-**Sales** talks to the customers, the need to add sales and insert/modify customers for new clients or new info about a client, read/write customers and orders, delete to orders as well if they regards
+**Sales** talks to the customers, the need to add sales and insert/modify customers for new clients or new info about a client, read/write customers and orders, delete to orders as well if they regrets
 ```
 mysql -u root -ppass1234 -e " \
 CREATE USER 'Sales'@'%' IDENTIFIED BY 'pass1234'; \
