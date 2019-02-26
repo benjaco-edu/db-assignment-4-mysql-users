@@ -39,7 +39,7 @@ SET global general_log = 1; SET global log_output = 'table' \
 
 ## Excercise 1 - user privileges
 
-**Inventory** has to be albe to do all operations on products and productlines (contains the product description) to mange the products
+**Inventory** has to be able to do all operations on products and productlines (contains the product description) to mange the products
 ```
 mysql -u root -ppass1234 -e " \
 CREATE USER 'Inventory'@'%' IDENTIFIED BY 'pass1234'; \
